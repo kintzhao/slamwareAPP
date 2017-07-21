@@ -1,0 +1,13 @@
+build
+Debug
+Release
+*.suo
+*AutoRecover*
+*.sdf
+*.opensdf
+ipch
+~AutoRecover*
+*.user
+.vs
+*.opendb
+*.db
