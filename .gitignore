@@ -11,3 +11,8 @@ ipch
 .vs
 *.opendb
 *.db
+
+*.config
+*.creator
+*.files
+*.includes
