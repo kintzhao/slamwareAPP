@@ -57,19 +57,28 @@ public:
     ros::Subscriber goal_sub_;
 
 private:
+    void loopThreads();
+
+private:
     ros::NodeHandle nh_;
-    std::string ip_addres_;
-    bool workOk;
     SlamwareCorePlatform SDP_;
+
+    std::string ip_addres_;
+    bool angle_compensate_;
 
     float robot_pose_pub_period_;
     float scan_pub_period_;
     float map_pub_period_;
-    float transform_publish_period;
+    float path_pub_period_;
+
+    float map_size_down_left_x_;
+    float map_size_down_left_y_;
+    float map_size_width_;
+    float map_size_height_;
 
     tf::TransformBroadcaster tfB_;
 
-    boost::thread*  robot_pose_pub_thread_;
+    boost::thread* robot_pose_pub_thread_;
     boost::thread* scan_pub_thread_;
     boost::thread* map_pub_thread_;
     boost::thread* transform_thread_;
@@ -80,7 +89,12 @@ private:
     std::string map_frame_;
     std::string odom_frame_;
 
-    std::string topic_control;
-    std::string topic_goal;
+    std::string vel_control_topic_;
+    std::string goal_topic_;
+    std::string scan_topic_;
+    std::string odom_topic_;
+    std::string map_topic_;
+    std::string map_info_topic_;
+    std::string path_topic_;
 };
 

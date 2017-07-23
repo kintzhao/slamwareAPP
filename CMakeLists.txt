@@ -28,9 +28,9 @@ message("${PROJECT_SOURCE_DIR}/src",${PROJECT_SOURCE_DIR}/src)
 link_directories( ${SDK_LIBRARY_DIR}/lib
                   ${CMAKE_SOURCE_DIR})
 
-add_executable(moveandpathdemo ./src/main.cpp ./src/slamwareAPP.cpp)
+add_executable(slamwareNode ./src/main.cpp ./src/slamwareAPP.cpp)
 
-target_link_libraries(moveandpathdemo
+target_link_libraries(slamwareNode
         ${catkin_LIBRARIES}
         librpos_robotplatforms_rpslamware.a
         librpos_framework.a

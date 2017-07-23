@@ -22,18 +22,18 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "slamwareAPP");
   const int reconnect_count_threshold = 10;
 
-  slamwareAPP slamwareAPPNode("10.16.131.69");
+  slamwareAPP slamwareAPPNode;
 
   int reconnect_count_timer = 0;
   while(!slamwareAPPNode.connectSlamware() && reconnect_count_timer++ < reconnect_count_threshold)
   {
-      std::cout<<" reconnect : "<<reconnect_count_timer<<std::endl;
+      std::cout<<" ===> reconnect : "<<reconnect_count_timer<<std::endl;
   }
   if(reconnect_count_timer >= reconnect_count_threshold)
   {
-      std::cout<<" reconnect error, cannot connect the slamware ! "<<std::endl;
+      std::cout<<" ===> reconnect error, cannot connect the slamware ! "<<std::endl;
   }
-  std::cout<<" connect success ! "<<std::endl;
+  std::cout<<" ===> slamwareAPP start work! "<<std::endl;
   slamwareAPPNode.startSlamwareWork();
 
   ros::spin();
