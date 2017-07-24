@@ -1,6 +1,7 @@
 /*
-   This project is just for test slamware, and give an simple tutorial to use slamware SDK on ROS. 
-if you have any question, can contact with  kint.zhao E-MAIL: huashneg_zyh@163.com.
+   This project is just for test slamware, and give an simple tutorial to use slamware SDK on ROS.
+
+if you have any question, can contact with kint.zhao E-MAIL: huasheng_zyh@163.com.
 
 More information from following:
 slamtec:      http://www.slamtec.com/en/
@@ -15,18 +16,10 @@ Do some application using slamware SDK on ubuntu.
 
 
 NOTICE:
- you should run the slamcore on your robot, mark the IP_addres. 
-modify the launch/view_slamwareAPP.launch for your robot system.
-run :
-	roslaunch slamwareAPP view_slamwareNode.launch
-
-
-
-
- 
-
-
-
+ 1) you should run the slamcore on your robot, mark the IP_addres. and make sure slamCore run OK!
+ 2) modify the launch/view_slamwareAPP.launch for your robot system.
+ 3) upgrade your slamware SDK from http://www.slamtec.com/cn/Slamware
+ 4) run : roslaunch slamwareAPP view_slamwareNode.launch
 
 
 
