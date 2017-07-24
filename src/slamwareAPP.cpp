@@ -206,8 +206,8 @@ void slamwareAPP::publishScan(double transform_publish_period)
         ros::Time end_scan_time = ros::Time::now();
         double scan_time = (end_scan_time - start_scan_time).toSec() * 1e-3;
 
-        std::vector<rpos::core::LaserPoint> points = ls.getLaserPoints();
-        if(points.empty())
+        const std::vector<rpos::core::LaserPoint>& points = ls.getLaserPoints();
+        if(points.empty())// skip publish
             continue;
 
         sensor_msgs::LaserScan scan_msg;
@@ -307,6 +307,9 @@ void slamwareAPP::publishMap(double publish_period)
         Map map = SDP_.getMap(MapTypeBitmap8Bit, rpos::core::RectangleF(map_size_down_left_x_, map_size_down_left_y_, map_size_width_, map_size_height_),
                               rpos::features::location_provider::EXPLORERMAP);
         std::vector<_u8> & mapData = map.getMapData();
+        if(mapData.empty())// skip publish
+            continue;
+
         rpos::core::RectangleF rec = map.getMapArea();
 
         nav_msgs::GetMap::Response map_ros;
@@ -362,6 +365,9 @@ void slamwareAPP::publishPlanPath(float publish_period)
         {
             rpos::features::motion_planner::Path path = moveAction.getRemainingPath();
             const std::vector<rpos::core::Location>& locations = path.getPoints();
+
+            if(locations.empty())// skip publish
+                continue;
 
             //create a path message
             nav_msgs::Path paths;

@@ -32,6 +32,7 @@ int main(int argc, char** argv)
   if(reconnect_count_timer >= reconnect_count_threshold)
   {
       std::cout<<" ===> reconnect error, cannot connect the slamware ! "<<std::endl;
+      return(0);
   }
   std::cout<<" ===> slamwareAPP start work! "<<std::endl;
   slamwareAPPNode.startSlamwareWork();

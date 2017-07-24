@@ -7,6 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /Odometry1
+        - /Path1
+        - /Axes1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -83,7 +85,7 @@ Visualization Manager:
       Class: rviz/Odometry
       Color: 255; 25; 0
       Enabled: true
-      Keep: 100
+      Keep: 10000
       Length: 0.1
       Name: Odometry
       Position Tolerance: 0.1
@@ -118,7 +120,7 @@ Visualization Manager:
       Class: rviz/Path
       Color: 25; 255; 0
       Enabled: true
-      Line Style: Billboards
+      Line Style: Lines
       Line Width: 0.01
       Name: Path
       Offset:
@@ -130,9 +132,9 @@ Visualization Manager:
       Value: true
     - Class: rviz/Axes
       Enabled: true
-      Length: 1
+      Length: 0.2
       Name: Axes
-      Radius: 0.1
+      Radius: 0.05
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/TF
@@ -185,22 +187,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.88472
+      Distance: 5.57401
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.75686
-        Y: 1.90021
-        Z: -0.164819
+        X: 0.978706
+        Y: 0.0242968
+        Z: 0.01523
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.5698
+      Pitch: 1.4498
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.66858
+      Yaw: 4.70858
     Saved: ~
 Window Geometry:
   Displays:
