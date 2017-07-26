@@ -1,2 +1,0 @@
-x86_64-debug : GCC 4.8
-x86_64-release : GCC 4.8
