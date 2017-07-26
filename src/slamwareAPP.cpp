@@ -191,7 +191,7 @@ void slamwareAPP::publishRobotPose(double publish_period)
 
         //send TF transform
         nav_msgs::Odometry robotPose;
-        robotPose.header.frame_id = map_frame_;
+        robotPose.header.frame_id = odom_frame_;
         robotPose.header.stamp = ros::Time::now ();
         robotPose.pose.pose.position.x = pose.x();
         robotPose.pose.pose.position.y = pose.y();
