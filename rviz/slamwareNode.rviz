@@ -146,9 +146,9 @@ Visualization Manager:
           Value: true
         laser:
           Value: true
-        map:
-          Value: true
         odom:
+          Value: true
+        slamware_map:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -156,7 +156,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
+        slamware_map:
           odom:
             base_link:
               laser:
@@ -166,7 +166,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: map
+    Fixed Frame: slamware_map
     Frame Rate: 30
   Name: root
   Tools:
@@ -187,16 +187,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.57401
+      Distance: 10.6298
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.978706
-        Y: 0.0242968
-        Z: 0.01523
+        X: 3.71115
+        Y: 1.95413
+        Z: 0.251143
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 1.4498
