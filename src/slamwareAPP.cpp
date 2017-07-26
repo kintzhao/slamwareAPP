@@ -54,6 +54,11 @@ void slamwareAPP::init()
         angle_compensate_ = true;
     }
 
+    if(!nh_.getParam("fixed_odom_map_tf", fixed_odom_map_tf_))
+    {
+        fixed_odom_map_tf_ = true;
+    }
+
     //frame
     if(!nh_.getParam("robot_frame", robot_frame_))
         robot_frame_ = "/base_link";
@@ -160,10 +165,13 @@ void slamwareAPP::publishRobotPose(double publish_period)
         tf::Transform identy_transform;
         identy_transform.setOrigin (tf::Vector3 (0.0, 0.0, 0.0));
         identy_transform.setRotation (tf::Quaternion(0,0,0,1));
-        tfB_.sendTransform ( tf::StampedTransform (identy_transform, ros::Time::now (), map_frame_,
+        if(fixed_odom_map_tf_)//only for debug rosrun
+        {
+            tfB_.sendTransform ( tf::StampedTransform (identy_transform, ros::Time::now (), map_frame_,
                                       odom_frame_));
-        tfB_.sendTransform ( tf::StampedTransform (identy_transform, ros::Time::now (), robot_frame_,
-                                      laser_frame_));
+            tfB_.sendTransform ( tf::StampedTransform (identy_transform, ros::Time::now (), robot_frame_,
+                                          laser_frame_));
+        }
 
         //check power
         int battPercentage = SDP_.getBatteryPercentage();

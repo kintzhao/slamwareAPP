@@ -65,7 +65,7 @@ private:
 
     std::string ip_addres_;
     bool angle_compensate_;
-
+    bool fixed_odom_map_tf_;
     float robot_pose_pub_period_;
     float scan_pub_period_;
     float map_pub_period_;
